@@ -5,21 +5,29 @@ public class Main
   public static void main(String[] args)
   {
     Scanner scan = new Scanner(System.in);
-    System.out.println("give two words");
-    String word1 = scan.nextLine();
-    String word2 = scan.nextLine();
-    System.out.println("Give me a number");
-    int N = scan.nextInt();
-    scan.nextLine();
-    lastFirstN(word1, word2, N);
+  //   System.out.println("give two words");
+  //   String word1 = scan.nextLine();
+  //   String word2 = scan.nextLine();
+  //   System.out.println("Give me a number");
+  //   int N = scan.nextInt();
+  //   scan.nextLine();
+  //   lastFirstN(word1, word2, N);
 
-  //  lastFirstN("cream", "butter", 3);
+  // //  lastFirstN("cream", "butter", 3);
   //  stringManip("hello", "hello");
 
-    System.out.println("give me two words again");
-    String word1P2 = scan.nextLine();
-    String word2P2 = scan.nextLine();
-    stringManip(word1P2, word2P2);
+  //   System.out.println("give me two words again");
+  //   String word1P2 = scan.nextLine();
+  //   String word2P2 = scan.nextLine();
+  //   stringManip(word1P2, word2P2);
+
+    // System.out.println(removeStr("badaboom", "ada"));
+
+    System.out.println("Give me a word");
+    String word1P3 = scan.nextLine();
+    System.out.println("Give me a a line of characters inside the first word");
+    String word2P3 = scan.nextLine();
+    System.out.println(removeStr(word1P3, word2P3));
   }
 
   /** Precondition: s1 and s2 are not null
@@ -50,7 +58,13 @@ public class Main
   */
   public static String removeStr(String s1, String s2)
   {
-    String output = null;
+    int temp = s1.indexOf(s2);
+    if (temp == -1) {
+      return "No such time where string 2 is in string 1";
+    } else {
+    String wordFinal = s1.substring(0, temp) + s1.substring(temp + s2.length());
+    String output = wordFinal;
     return output;
+    }
   }
 }
